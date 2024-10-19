@@ -8,8 +8,6 @@
 
 > node20
 
-> redis4
-
 ### Development
 
 ```bash
