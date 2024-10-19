@@ -12,10 +12,7 @@ English · [中文](./README-zh_CN.md)
 
 ### Environment Variables
 
-<blockquote class='is-warning'>
-<svg viewBox="64 64 896 896" focusable="false" data-icon="exclamation-circle" wisdth="16px" height="16px" fill="#faad14" aria-hidden="true"><path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm-32 232c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v272c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V296zm32 440a48.01 48.01 0 010-96 48.01 48.01 0 010 96z"></path></svg>
-<p style="margin: 0 12px 0 8px">Incomplete environment variables will result in service unavailability. Please go to supplement</p>
-</blockquote>
+> Incomplete environment variables will result in service unavailability. Please go to supplement
 
 [Development Env](https://github.com/hzh11012/qnets-sso-koa2/tree/master/.env.development) ·
 [Production Env](https://github.com/hzh11012/qnets-sso-koa2/tree/master/.env.production)
@@ -68,24 +65,3 @@ $ yarn prd
 ### License
 
 [MIT](https://github.com/hzh11012/qnets-sso-koa2/blob/master/LICENSE)
-
-<style>
-    .is-warning {
-        width: fit-content;
-        padding: 8px 12px 8px 8px;
-        border-left: 0;
-        border-radius: .6rem;
-        font-size: 14px;
-        font-weight: bold;
-        display: flex;
-        align-items: center;
-        background-color: #fffbe6;
-        color: #333;
-        margin-bottom: 12px;
-        line-height: 22px;
-    }
-    .is-warning p {
-        font-size: 14px;
-        margin-bottom: 0px;
-    }
-</style>
