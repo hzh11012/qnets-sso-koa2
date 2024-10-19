@@ -8,6 +8,7 @@ const ratelimit = require('koa-ratelimit');
 const InitManager = require('@core/init');
 const errorConf = require('@middlewares/exception');
 const dotenv = require('dotenv');
+const getIP = require('@middlewares/ip');
 
 const envFile =
     process.env.NODE_ENV === 'production'
@@ -20,6 +21,7 @@ const app = new Koa();
 app.use(cors());
 onerror(app, errorConf);
 app.use(parser());
+app.use(getIP);
 
 // 接口调用频率限制（Rate-Limiting）
 // https://github.com/koajs/ratelimit

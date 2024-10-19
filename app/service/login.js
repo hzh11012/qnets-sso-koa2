@@ -1,13 +1,12 @@
-const {UserDao} = require('@dao/user');
+const {UserDao} = require('@dao/login');
 const {generateToken} = require('@core/utils');
 const {SmsManager} = require('@service/sms');
 const {AuthFailed, HttpException} = require('@core/http-exception');
-const ip = require('ip');
 
 class LoginManager {
     // 短信登录（自动注册）
     static async smsLogin(params) {
-        const {phone, code} = params;
+        const {phone, code, ip} = params;
 
         const verifyRes = SmsManager.verifyCode(phone, code);
         if (verifyRes) {
@@ -16,22 +15,22 @@ class LoginManager {
             if (err) throw new HttpException(`用户注册失败：${err.msg}`);
 
             const access_token = generateToken({
-                user: user.id,
-                ip: ip.address()
+                id: user.id,
+                phone: user.phone
             });
             const refresh_token = generateToken(
                 {
-                    user: user.id,
-                    ip: ip.address()
+                    id: user.id,
+                    phone: user.phone,
+                    ip
                 },
                 true
             );
 
-            const data = {
+            return {
                 access_token,
                 refresh_token
             };
-            return data;
         } else {
             throw new AuthFailed('验证码错误');
         }

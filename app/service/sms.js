@@ -59,7 +59,7 @@ class SmsManager {
         };
 
         this.client.SendSms(config, err => {
-            if (err) throw new HttpException('验证码发送失败');
+            if (err) throw new HttpException(`验证码发送失败: ${err.msg}`);
             this.setCode(phone, code, maxAge * 60 * 1000);
         });
     }

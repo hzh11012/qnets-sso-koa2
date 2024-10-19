@@ -20,7 +20,6 @@
     "@koa/cors": "^5.0.0",
     "basic-auth": "^2.0.1",
     "dotenv": "^16.4.5",
-    "ip": "^2.0.1",
     "jsonwebtoken": "^9.0.2",
     "koa": "^2.15.3",
     "koa-bodyparser": "^4.4.1",
