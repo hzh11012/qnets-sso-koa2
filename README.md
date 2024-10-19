@@ -1,7 +1,7 @@
 <div align="center">
     <img height="180" src="https://cdn.qnets.cn/logo.svg" />
     <h1 style="margin-top: 1.5rem">Qnets SSO</h1>
-    Qnets SSO 单点登录服务端，基于 cookie、session 实现
+    Qnets SSO 单点登录服务端，基于 jwt 实现
 </div>
 
 ### Environment
