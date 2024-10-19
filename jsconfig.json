@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@*": ["*"],
+            "@api/*": ["app/api/*"],
+            "@dao/*": ["app/dao/*"],
+            "@lib/*": ["app/lib/*"],
+            "@models/*": ["app/models/*"],
+            "@service/*": ["app/service/*"],
+            "@validators/*": ["app/validators/*"]
+        }
+    }
+}
