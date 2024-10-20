@@ -2,7 +2,7 @@ module.exports = {
     apps: [
         {
             // 项目名
-            name: 'nodejs-koa-api',
+            name: 'qnets-sso-koa2',
             // 执行文件
             script: './app.js',
             // 是否监听文件变动然后重启
