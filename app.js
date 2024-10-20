@@ -32,7 +32,7 @@ app.use(
         db: db,
         duration: 60000,
         errorMessage: '访问频率过高，请稍后再试',
-        id: ctx => ctx.ip,
+        id: ctx => ctx.realIp,
         headers: {
             remaining: 'Rate-Limit-Remaining',
             reset: 'Rate-Limit-Reset',

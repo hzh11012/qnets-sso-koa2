@@ -10,7 +10,7 @@ const getIP = (ctx, next) => {
         ip = ip.split(',')[0];
     }
 
-    ctx.ip = ip;
+    ctx.realIp = ip;
     return next();
 };
 

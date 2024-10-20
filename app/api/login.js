@@ -20,7 +20,7 @@ router.post('/sms_login', async ctx => {
     const data = await LoginManager.smsLogin({
         phone: parameter.phone,
         code: parameter.code,
-        ip: ctx.ip
+        ip: ctx.realIp
     });
 
     ctx.response.status = 200;
@@ -39,7 +39,7 @@ router.post('/sms_code', ctx => {
 
 // sso 更新token
 router.post('/token_refresh', async ctx => {
-    const ip = ctx.ip;
+    const ip = ctx.realIp;
 
     const tokenToken = basicAuth(ctx.req);
     let errMsg = '无效的refresh_token';
