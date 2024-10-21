@@ -8,7 +8,7 @@ English · [中文](./README-zh_CN.md)
 
 </div>
 
-## Quick Start7
+## Quick Start
 
 ### Environment Variables
 
