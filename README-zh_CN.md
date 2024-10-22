@@ -54,13 +54,11 @@ $ yarn prd
 
 ### 星历史
 
-![Star History Chart](https://api.star-history.com/svg?repos=hzh11012/qnets-sso-koa2&type=Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=hzh11012/qnets-sso-koa2&type=Date)](https://star-history.com/#hzh11012/qnets-sso-koa2)
 
 ### 贡献者
 
-<a href="https://github.com/hzh11012/qnets-sso-koa2/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=hzh11012/qnets-sso-koa2" />
-</a>
+<a href="https://github.com/hzh11012/qnets-sso-koa2/graphs/contributors"><img src="https://contrib.rocks/image?repo=hzh11012/qnets-sso-koa2"></a>
 
 ### 许可证
 
