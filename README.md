@@ -58,7 +58,7 @@ $ yarn prd
 
 ### Contributors
 
-<a href="https://github.com/EstrellaXD/Auto_Bangumi/graphs/contributors"><img src="https://contrib.rocks/image?repo=hzh11012/qnets-sso-koa2"></a>
+<a href="https://github.com/hzh11012/qnets-sso-koa2/graphs/contributors"><img src="https://contrib.rocks/image?repo=hzh11012/qnets-sso-koa2"></a>
 
 ### License
 
