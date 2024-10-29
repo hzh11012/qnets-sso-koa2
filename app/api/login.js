@@ -6,7 +6,7 @@ const {Resolve} = require('@lib/helper');
 const basicAuth = require('basic-auth');
 const {Forbidden} = require('@core/http-exception');
 const jwt = require('jsonwebtoken');
-const {generateToken} = require('@core/utils');
+const {generateToken, parseTime} = require('@core/utils');
 const res = new Resolve();
 
 const router = new Router({
@@ -23,6 +23,20 @@ router.post('/sms_login', async ctx => {
         ip: ctx.realIp
     });
 
+    ctx.cookies.set('access_token', data.access_token, {
+        domain: process.env.COOKIES_DOMAIN,
+        maxAge: parseTime(process.env.ACCESS_TOKEN_SECRET_KEY),
+        httpOnly: process.env.COOKIES_HTTP_ONLY,
+        overwrite: process.env.COOKIES_OVERWRITE,
+        secure: process.env.COOKIES_SECURE
+    });
+    ctx.cookies.set('refresh_token', data.refresh_token, {
+        domain: process.env.COOKIES_DOMAIN,
+        maxAge: parseTime(process.env.REFRESH_TOKEN_SECRET_KEY),
+        httpOnly: process.env.COOKIES_HTTP_ONLY,
+        overwrite: process.env.COOKIES_OVERWRITE,
+        secure: process.env.COOKIES_SECURE
+    });
     ctx.response.status = 200;
     ctx.body = res.json(data, '登录成功');
 });
