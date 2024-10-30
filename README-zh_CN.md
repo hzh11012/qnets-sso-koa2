@@ -36,7 +36,6 @@ Qnets 单点登录服务端, 基于 JWT 实现
 -   <code>COOKIES_DOMAIN</code>：Cookie的有效域
 -   <code>COOKIES_HTTP_ONLY</code>：Cookie仅通过HTTP请求发送，默认 <code>true</code>
 -   <code>COOKIES_OVERWRITE</code>：Cookie是否允许覆盖，默认 <code>true</code>
--   <code>COOKIES_SECURE</code>：Cookie仅通过HTTPS协议发送，默认 <code>false</code>
 
 ### 开发环境
 

@@ -36,7 +36,6 @@ English · [中文](./README-zh_CN.md)
 -   <code>COOKIES_DOMAIN</code>：The effective domain of cookies
 -   <code>COOKIES_HTTP_ONLY</code>：Cookies are only sent through HTTP requests, default <code>true</code>
 -   <code>COOKIES_OVERWRITE</code>：Cookies are allowed to be overwritten, default <code>true</code>
--   <code>COOKIES_SECURE</code>：Cookies are only sent through the HTTPS protocol, default <code>false</code>
 
 ### Development
 
