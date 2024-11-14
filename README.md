@@ -34,7 +34,6 @@ English · [中文](./README-zh_CN.md)
 -   <code>SMS_SECRET_KEY</code>：Tencent Cloud SMS SecretKey
 -   <code>SMS_REGION</code>：Tencent Cloud SMS Region
 -   <code>COOKIES_DOMAIN</code>：The effective domain of cookies
--   <code>COOKIES_HTTP_ONLY</code>：Cookies are only sent through HTTP requests, default <code>true</code>
 -   <code>COOKIES_OVERWRITE</code>：Cookies are allowed to be overwritten, default <code>true</code>
 
 ### Development

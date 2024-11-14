@@ -26,13 +26,13 @@ router.post('/sms_login', async ctx => {
     ctx.cookies.set('access_token', data.access_token, {
         domain: process.env.COOKIES_DOMAIN,
         maxAge: parseTime(process.env.ACCESS_TOKEN_EXPIRES_IN),
-        httpOnly: process.env.COOKIES_HTTP_ONLY,
+        httpOnly: false,
         overwrite: process.env.COOKIES_OVERWRITE
     });
     ctx.cookies.set('refresh_token', data.refresh_token, {
         domain: process.env.COOKIES_DOMAIN,
         maxAge: parseTime(process.env.REFRESH_TOKEN_EXPIRES_IN),
-        httpOnly: process.env.COOKIES_HTTP_ONLY,
+        httpOnly: false,
         overwrite: process.env.COOKIES_OVERWRITE
     });
     ctx.response.status = 200;

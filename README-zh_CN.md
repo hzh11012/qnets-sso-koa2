@@ -34,7 +34,6 @@ Qnets 单点登录服务端, 基于 JWT 实现
 -   <code>SMS_SECRET_KEY</code>：腾讯云短信 SecretKey
 -   <code>SMS_REGION</code>：腾讯云短信 Region
 -   <code>COOKIES_DOMAIN</code>：Cookie的有效域
--   <code>COOKIES_HTTP_ONLY</code>：Cookie仅通过HTTP请求发送，默认 <code>true</code>
 -   <code>COOKIES_OVERWRITE</code>：Cookie是否允许覆盖，默认 <code>true</code>
 
 ### 开发环境
