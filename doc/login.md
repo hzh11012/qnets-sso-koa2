@@ -84,7 +84,7 @@ function _encode() {
 // 代码示例：重点看header携带 Authorization Basic + refresh_token
 ajax({
     url: 'http://localhost:4800/api/sso/token_refresh',
-    method: 'GET',
+    method: 'POST',
     success: res => {
         console.log(res.data);
     },
@@ -140,7 +140,7 @@ function _encode() {
 // 代码示例：重点看header携带 Authorization Basic + access_token
 ajax({
     url: 'http://localhost:4800/api/sso/token_check',
-    method: 'GET',
+    method: 'POST',
     success: res => {
         console.log(res.data);
     },
