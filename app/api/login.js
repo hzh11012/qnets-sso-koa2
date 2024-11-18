@@ -97,7 +97,7 @@ router.post('/token_refresh', async ctx => {
             overwrite: process.env.COOKIES_OVERWRITE
         });
         ctx.response.status = 200;
-        ctx.body = res.json(data, 'refresh_token验证成功');
+        ctx.body = res.success('refresh_token验证成功');
     } catch (err) {
         if (err.name === 'TokenExpiredError') {
             errMsg = 'refresh_token已过期';
