@@ -83,14 +83,21 @@ router.post('/token_refresh', async ctx => {
             },
             true
         );
+
+        ctx.cookies.set('access_token', access_token, {
+            domain: process.env.COOKIES_DOMAIN,
+            maxAge: parseTime(process.env.ACCESS_TOKEN_EXPIRES_IN),
+            httpOnly: false,
+            overwrite: process.env.COOKIES_OVERWRITE
+        });
+        ctx.cookies.set('refresh_token', refresh_token, {
+            domain: process.env.COOKIES_DOMAIN,
+            maxAge: parseTime(process.env.REFRESH_TOKEN_EXPIRES_IN),
+            httpOnly: false,
+            overwrite: process.env.COOKIES_OVERWRITE
+        });
         ctx.response.status = 200;
-        ctx.body = res.json(
-            {
-                access_token,
-                refresh_token
-            },
-            'refresh_token验证成功'
-        );
+        ctx.body = res.json(data, 'refresh_token验证成功');
     } catch (err) {
         if (err.name === 'TokenExpiredError') {
             errMsg = 'refresh_token已过期';
