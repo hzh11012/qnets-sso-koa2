@@ -131,4 +131,23 @@ router.post('/token_check', async ctx => {
     }
 });
 
+// sso 退出登录
+router.post('/sms_logout', async ctx => {
+    ctx.cookies.set('access_token', '', {
+        domain: process.env.COOKIES_DOMAIN,
+        maxAge: 0,
+        httpOnly: false,
+        overwrite: process.env.COOKIES_OVERWRITE
+    });
+    ctx.cookies.set('refresh_token', '', {
+        domain: process.env.COOKIES_DOMAIN,
+        maxAge: 0,
+        httpOnly: false,
+        overwrite: process.env.COOKIES_OVERWRITE
+    });
+
+    ctx.response.status = 200;
+    ctx.body = res.success('退出登录成功');
+});
+
 module.exports = router;
