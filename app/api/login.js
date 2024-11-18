@@ -4,7 +4,7 @@ const {LoginManager} = require('@service/login');
 const {SmsManager} = require('@service/sms');
 const {Resolve} = require('@lib/helper');
 const basicAuth = require('basic-auth');
-const {Forbidden} = require('@core/http-exception');
+const {Forbidden, AuthFailed} = require('@core/http-exception');
 const jwt = require('jsonwebtoken');
 const {generateToken, parseTime} = require('@core/utils');
 const res = new Resolve();
@@ -57,7 +57,7 @@ router.post('/token_refresh', async ctx => {
     let errMsg = '无效的refresh_token';
     if (!tokenToken || !tokenToken.name) {
         errMsg = '需要携带refresh_token';
-        throw new Forbidden(errMsg);
+        throw new AuthFailed(errMsg);
     }
 
     try {
@@ -67,7 +67,7 @@ router.post('/token_refresh', async ctx => {
         );
         if (decode.ip !== ip) {
             errMsg = 'refresh_token已失效';
-            throw new Forbidden(errMsg);
+            throw new AuthFailed(errMsg);
         }
 
         // 生成新的access_token 和 refresh_token
@@ -102,7 +102,7 @@ router.post('/token_refresh', async ctx => {
         if (err.name === 'TokenExpiredError') {
             errMsg = 'refresh_token已过期';
         }
-        throw new Forbidden(errMsg);
+        throw new AuthFailed(errMsg);
     }
 });
 
